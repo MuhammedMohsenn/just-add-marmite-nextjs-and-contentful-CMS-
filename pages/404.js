@@ -16,11 +16,8 @@ const NotFound = () => {
       <h1>404</h1>
       <h2>Oops! That page cannot be found :(</h2>
       <p>
-        Redirecting to{" "}
-        <Link href="/">
-          <a>Homepage</a>
-        </Link>{" "}
-        for more marmite goodness...
+        Redirecting to <Link href="/">Homepage</Link> for more marmite
+        goodness...
       </p>
 
       <style jsx>{`

@@ -9,11 +9,10 @@ export default function RecipeCard({ recipe }) {
       <div className="featured">
         <Image
           src={"https:" + thumbnail.fields.file.url}
-          // width={thumbnail.fields.file.details.image.width}
-          // height={thumbnail.fields.file.details.image.height}
+          alt={title}
           width="600"
           height="600"
-          objectFit="cover"
+          className="object-contain"
         />
       </div>
       <div className="content">
@@ -22,9 +21,7 @@ export default function RecipeCard({ recipe }) {
           <p>Takes approx {cookingTime} mins to make</p>
         </div>
         <div className="actions">
-          <Link href={"/recipes/" + slug}>
-            <a>Cook this</a>
-          </Link>
+          <Link href={"/recipes/" + slug}>Cook this</Link>
         </div>
       </div>
 
