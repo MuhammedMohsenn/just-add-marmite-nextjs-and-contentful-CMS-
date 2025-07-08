@@ -49,7 +49,7 @@ export default async function RecipeDetails({ params }) {
           width={1200}
           height={600}
           className="object-cover"
-          priority
+          priority={true}
         />
         <h2 className="uppercase m-[0px] bg-[#fff] inline-block p-[20px] relative -top-[60px] -left-[10px] rotate-z-[-1deg] shadow-[1px 3px 5px rgba(0, 0, 0, 0.1)]">
           {title}

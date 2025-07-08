@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        <footer className="bg-gray-900 text-gray-400 py-10 text-center mt-auto">
+        <footer className="bg-[#111] text-[#bbb] py-10 text-center mt-4">
           <p>Copyright 2025 Just Add Marmite :)</p>
         </footer>
       </body>
