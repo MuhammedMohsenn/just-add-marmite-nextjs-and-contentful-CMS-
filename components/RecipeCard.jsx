@@ -10,9 +10,9 @@ export default function RecipeCard({ recipe }) {
         <Image
           src={"https:" + thumbnail.fields.file.url}
           alt={title}
-          width="500"
-          height="600"
-          className="object-cover"
+          width={500}
+          height={600}
+          className="object-cover w-[500px] h-[600px]"
         />
       </div>
       <div className="bg-[#fff] m-[0px] relative -top-[40px] -left-[10px] shadow-[1px 3px 5px rgba(0, 0, 0, 0.1)]">

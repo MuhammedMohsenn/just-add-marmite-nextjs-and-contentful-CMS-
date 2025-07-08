@@ -14,10 +14,12 @@ export default function RootLayout({ children }) {
         <header className="text-center my-16">
           <Link href="/">
             <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
+              <p className="leading-4 text-[1rem] font-normal">Just Add</p>
+              <p className="text-2xl md:text-4xl font-extrabold md:text-red">
+                Marmite
+              </p>
             </h1>
-            <h2>Spread The Joy</h2>
+            <h2 className="text-[1.25rem] font-normal">Spread The Joy</h2>
           </Link>
         </header>
 
