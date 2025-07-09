@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 async function getRecipe(slug) {
   const client = createClient({
@@ -27,10 +27,11 @@ export async function generateStaticParams() {
   return res.items.map((item) => ({ slug: item.fields.slug }));
 }
 
-export const revalidate = 1; // ISR: Revalidate every 1 second
+export const revalidate = 60; // ISR: Revalidate every 60 second
 
 export default async function RecipeDetails({ params }) {
-  const recipe = await getRecipe(params.slug);
+  const { slug } = await params;
+  const recipe = await getRecipe(slug);
 
   // Handle redirect if recipe not found
   if (!recipe) {
@@ -69,19 +70,6 @@ export default async function RecipeDetails({ params }) {
         <h3 className="uppercase">Method:</h3>
         <div>{documentToReactComponents(method)}</div>
       </div>
-
-      {/* <style jsx>{`
-        
-        .info p {
-          margin: 0;
-        }
-        .info span::after {
-          content: ", ";
-        }
-        .info span:last-child::after {
-          content: ".";
-        }
-      `}</style> */}
     </div>
   );
 }
